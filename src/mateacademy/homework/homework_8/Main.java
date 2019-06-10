@@ -29,7 +29,5 @@ public class Main {
             System.out.println(temp.get(i));
         }
         System.out.println("\n size = " + temp.size());
-
-        //System.out.println(temp.get(7));
     }
 }
