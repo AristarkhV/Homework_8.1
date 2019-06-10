@@ -11,6 +11,7 @@ public class MyArrayList<T> implements List<T> {
 
     public MyArrayList() {
         values = (T[]) new Object[CAPACITY];
+        currentCapacity = CAPACITY;
     }
 
     private boolean indexOutOfBounds(int index) {
@@ -21,7 +22,7 @@ public class MyArrayList<T> implements List<T> {
     }
 
     private void increaseCapacity() {
-        if (size > values.length) {
+        if (size >= values.length) {
             currentCapacity = currentCapacity * 3 / 2;
         }
     }
@@ -85,8 +86,7 @@ public class MyArrayList<T> implements List<T> {
     public T remove(T t) {
         for (int i = 0; i < size; i++) {
             if (values[i].equals(t)) {
-                remove(i);
-                return t;
+                return remove(i);
             }
         }
         return null;
