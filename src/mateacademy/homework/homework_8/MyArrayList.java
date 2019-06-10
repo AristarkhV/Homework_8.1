@@ -11,6 +11,7 @@ public class MyArrayList<T> implements List<T> {
 
     public MyArrayList() {
         values = (T[]) new Object[CAPACITY];
+        currentCapacity = CAPACITY;
     }
 
     private boolean indexOutOfBounds(int index) {
